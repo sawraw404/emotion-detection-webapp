@@ -21,7 +21,7 @@ if st.button("Predict Emotion"):
     if tweet.strip() != "":
         # Feature Engineering
         tfidf_text = vectorizer.transform([tweet]).toarray()
-        numeric = scaler.transform([[len(tweet), len(tweet.split()), '?' in tweet, '!' in tweet]])
+        numeric = scaler.transform([[len(tweet), len(tweet.split()), int('?' in tweet), int('!' in tweet)]])
         features = np.hstack((tfidf_text, numeric))
 
         # Prediction
@@ -31,3 +31,4 @@ if st.button("Predict Emotion"):
         st.success(f"Predicted Emotion: **{emotion}**")
     else:
         st.warning("Please enter a tweet before clicking Predict.")
+
