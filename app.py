@@ -4,10 +4,10 @@ import numpy as np
 import joblib
 
 # Load model and preprocessors
-model = joblib.load("model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
-scaler = joblib.load("scaler.pkl")
-le = joblib.load("label_encoder.pkl")
+model = joblib.load("models/model.pkl")
+vectorizer = joblib.load("models/vectorizer.pkl")
+scaler = joblib.load("models/scaler.pkl")
+le = joblib.load("models/label_encoder.pkl")
 
 # Webpage layout
 st.title("Tweet Emotion Detection App")
